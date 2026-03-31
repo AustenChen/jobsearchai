@@ -1,0 +1,19 @@
+{
+  "name": "workable-search-cli",
+  "version": "1.0.0",
+  "description": "CLI for searching jobs on Workable ATS (workable.com)",
+  "type": "module",
+  "main": "src/cli.ts",
+  "bin": {
+    "workable-search": "src/cli.ts"
+  },
+  "scripts": {
+    "start": "bun run src/cli.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/bun": "latest"
+  }
+}

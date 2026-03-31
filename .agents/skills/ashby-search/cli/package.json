@@ -1,0 +1,19 @@
+{
+  "name": "ashby-search-cli",
+  "version": "1.0.0",
+  "description": "CLI for searching jobs on Ashby ATS (ashbyhq.com)",
+  "type": "module",
+  "main": "src/cli.ts",
+  "bin": {
+    "ashby-search": "src/cli.ts"
+  },
+  "scripts": {
+    "start": "bun run src/cli.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/bun": "latest"
+  }
+}
