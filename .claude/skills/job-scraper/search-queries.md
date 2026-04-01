@@ -1,11 +1,9 @@
-# Search Queries for Job Scraper
-
-<!-- SETUP: Customize these queries based on your skills, target roles, and location -->
+# Search Queries for Job Scraper — Austen Chen
 
 ## Search Sites
 
 Primary (US job market):
-- **linkedin.com/jobs** - LinkedIn job listings (filter: United States / your city)
+- **linkedin.com/jobs** - LinkedIn job listings (filter: United States / San Francisco)
 - **ashbyhq.com** - Ashby ATS (use ashby-search skill for target companies)
 - **lever.co** - Lever ATS (use lever-search skill for target companies)
 - **smartrecruiters.com** - SmartRecruiters ATS (use smartrecruiters-search skill)
@@ -17,99 +15,125 @@ Secondary (company career pages via Google):
 - `site:jobs.lever.co` for Lever-hosted job pages
 - `site:jobs.ashbyhq.com` for Ashby-hosted job pages
 
+---
+
 ## Target Companies by ATS
 
-<!-- SETUP: Add companies you're interested in, grouped by which ATS they use -->
-<!-- The dedicated CLI skills (lever-search, ashby-search, etc.) can query these directly -->
+Use the dedicated CLI skills to query these directly — faster and more structured than WebSearch.
 
 ### Lever (lever-search)
 ```
-# Example slugs — replace with your actual target companies:
-# stripe, cloudflare, figma, notion, openai, anduril-industries
+# Add/remove slugs based on your current target list:
+# stripe, cloudflare, rippling, plaid, brex, gusto, figma, notion, linear
 ```
 
 ### Ashby (ashby-search)
 ```
-# Example slugs — replace with your actual target companies:
-# anthropic, linear, retool, brex, mercury, vercel, scale-ai
+# Add/remove slugs based on your current target list:
+# anthropic, scale-ai, retool, mercury, vercel, runway, ramp, deel
 ```
 
 ### SmartRecruiters (smartrecruiters-search)
 ```
-# Example company IDs — replace with your actual target companies:
-# Thoughtworks, Criteo, Delivery
+# Add/remove company IDs based on your current target list:
+# Thoughtworks, Salesforce, HubSpot
 ```
 
 ### Workable (workable-search)
 ```
-# Example slugs — replace with your actual target companies:
-# hubspot, gitlab, deel, buffer, intercom
+# Add/remove slugs based on your current target list:
+# hubspot, intercom, gitlab, buffer
 ```
+
+---
 
 ## Query Categories
 
-Queries are grouped by priority. Each query should be combined with your location terms (e.g. "New York", "San Francisco", "Remote") where the site supports it.
+### Priority 1: BD / Partnerships / Strategic Alliances
 
-### Priority 1: [YOUR_PRIMARY_ROLE_TYPE]
-
-These match your strongest and most desired career direction.
+Core target — strongest match to Austen's background and goals.
 
 ```
-site:linkedin.com/jobs "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_CITY] United States
-site:jobs.lever.co "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_CITY]
-site:jobs.ashbyhq.com "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_CITY]
-"[YOUR_PRIMARY_JOB_TITLE]" site:greenhouse.io [YOUR_CITY]
+site:linkedin.com/jobs "Director of Partnerships" "San Francisco" OR Remote
+site:linkedin.com/jobs "Head of Partnerships" "San Francisco" OR Remote
+site:linkedin.com/jobs "VP of Partnerships" "San Francisco" OR Remote
+site:jobs.lever.co "Director of Partnerships" "San Francisco" OR Remote
+site:jobs.ashbyhq.com "Head of Business Development" Remote
+site:linkedin.com/jobs "Strategic Alliances Manager" tech "San Francisco"
+site:greenhouse.io "Director of Strategic Partnerships" "San Francisco" OR Remote
 ```
 
-### Priority 2: [YOUR_DOMAIN_EXPERTISE]
+### Priority 2: Solutions Engineering / Partner Solutions
 
-These match your domain expertise.
-
-```
-site:linkedin.com/jobs [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] United States
-site:jobs.lever.co [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY]
-site:jobs.ashbyhq.com [YOUR_DOMAIN_KEYWORD_1] United States
-```
-
-### Priority 3: [YOUR_ADJACENT_ROLE_TYPE]
-
-Adjacent roles you could pivot into.
+Strong match — directly reflects the Gusto Embedded Payroll role.
 
 ```
-site:linkedin.com/jobs "[YOUR_ADJACENT_TITLE_1]" [YOUR_KEY_SKILL] [YOUR_CITY]
-site:jobs.lever.co "[YOUR_ADJACENT_TITLE_2]" [YOUR_KEY_SKILL]
-site:jobs.ashbyhq.com "[YOUR_ADJACENT_TITLE_1]" [YOUR_KEY_SKILL]
+site:linkedin.com/jobs "Solutions Engineer" partnerships "San Francisco" OR Remote
+site:linkedin.com/jobs "Partner Solutions Manager" "San Francisco" OR Remote
+site:jobs.lever.co "Partner Solutions Engineer" Remote
+site:jobs.ashbyhq.com "Solutions Architect" partnerships Remote
+site:greenhouse.io "Partner Engineer" "San Francisco" OR Remote
+site:linkedin.com/jobs "Technical Account Manager" fintech "San Francisco" OR Remote
 ```
 
-### Priority 4: Broader Technical / Remote
+### Priority 3: Business Development (General)
 
-Wider net for general technical roles, including remote-first.
+Broader BD roles — especially at API-first, fintech, or developer tool companies.
 
 ```
-site:linkedin.com/jobs "[YOUR_KEY_SKILL] developer" Remote United States
-site:jobs.lever.co "[YOUR_KEY_SKILL]" Remote
-site:jobs.ashbyhq.com "[YOUR_KEY_SKILL]" Remote
-"[YOUR_KEY_SKILL]" "remote" site:greenhouse.io
+site:linkedin.com/jobs "Director of Business Development" SaaS "San Francisco" OR Remote
+site:jobs.lever.co "Head of Business Development" fintech
+site:jobs.ashbyhq.com "Business Development" "San Francisco" OR Remote
+site:linkedin.com/jobs "Business Development Manager" API "San Francisco"
+site:greenhouse.io "Business Development" fintech "San Francisco" OR Remote
 ```
+
+### Priority 4: Chief of Staff / Adjacent Roles
+
+Adjacent roles worth monitoring — strong fit given operational + executive interface background.
+
+```
+site:linkedin.com/jobs "Chief of Staff" tech "San Francisco" OR Remote
+site:jobs.lever.co "Chief of Staff" startup "San Francisco" OR Remote
+site:jobs.ashbyhq.com "Chief of Staff" Remote
+site:linkedin.com/jobs "Head of Operations" partnerships "San Francisco"
+site:greenhouse.io "Chief of Staff" "Series B" OR "Series C" "San Francisco"
+```
+
+---
 
 ## Location Filter
 
-When evaluating results, verify the job location is within acceptable range. Define acceptable areas:
-- [YOUR_CITY] and surrounding metro area
-- [ACCEPTABLE_AREA_1]
-- [ACCEPTABLE_AREA_2]
-- Remote (US timezone compatible)
-- [TOO_FAR] (exclude — relocation required)
+Acceptable locations (Austen is open to all of the following):
+- **Ideal:** San Francisco Bay Area (on-site or hybrid)
+- **Strongly preferred:** Remote (US-based) — any time zone
+- **Open to:** New York, Seattle, Los Angeles, Austin, Boston
+- **Would consider for the right role:** Relocation to any major US city
+
+Do not exclude any of the above. Only flag if the role requires immediate non-US relocation.
+
+---
 
 ## Date Filter
 
-Only include jobs posted within the last 14 days, or with an application deadline that has not yet passed. If a posting date cannot be determined, include it but flag as "date unknown".
+Only include jobs posted within the last 14 days, or with an application deadline that has not yet passed. If posting date cannot be determined, include it but flag as "date unknown."
+
+---
 
 ## Adapting Queries
 
-If the user specifies a focus area, select queries from the matching category and also generate 2-3 custom queries for that focus. For example:
-- "/scrape [focus_area]" -> relevant category queries + custom focus-specific queries
+If the user specifies a focus area, select queries from the matching category and generate 2-3 custom queries:
 
-For ATS-specific searches of target companies, invoke the relevant skill directly:
-- `/scrape [company]` on Lever → `lever-search search --company [slug] --format table`
-- `/scrape [company]` on Ashby → `ashby-search search --company [slug] --format table`
+- `/scrape partnerships` → Priority 1 queries + custom queries for "strategic partnerships" and "alliances"
+- `/scrape solutions` → Priority 2 queries + custom queries for "solutions architect" and "partner engineer"
+- `/scrape fintech` → Cross-priority queries filtered to fintech/payments/embedded finance companies
+- `/scrape [company]` → Use the relevant ATS CLI directly (e.g. `lever-search search --company stripe --format table`)
+
+For target company searches, invoke the relevant ATS skill directly rather than using WebSearch:
+```bash
+# Example: check Stripe's Lever board for partnerships roles
+bun run skills/lever-search/cli/src/cli.ts search --company stripe --team Partnerships --format table
+
+# Example: check Anthropic's Ashby board
+bun run skills/ashby-search/cli/src/cli.ts search --company anthropic --department Business --format table
+```

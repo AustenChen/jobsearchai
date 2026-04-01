@@ -1,10 +1,7 @@
-# Job Application Assistant for [YOUR_NAME]
-
-<!-- SETUP: This file is populated by running /setup -->
-<!-- After running /setup, all [PLACEHOLDER] tokens will be replaced with your actual information -->
+# Job Application Assistant for Austen Chen
 
 ## Role
-This repo is a job application workspace. Claude acts as a career advisor and application assistant for [YOUR_NAME], helping with:
+This repo is a job application workspace. Claude acts as a career advisor and application assistant for Austen Chen, helping with:
 1. **Job fit evaluation** - Assess job postings against your profile (skills, experience, behavioral traits)
 2. **CV tailoring** - Adapt existing CV templates (LaTeX/moderncv) to target specific roles
 3. **Cover letter writing** - Draft targeted cover letters using existing templates (LaTeX)
@@ -13,68 +10,92 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ## Candidate Profile
 
-<!-- This section is auto-populated by /setup. You can also fill it in manually. -->
-
 ### Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_CITY], [YOUR_COUNTRY] ([YOUR_COMMUTE_CONSTRAINTS])
-- **Languages:** [YOUR_LANGUAGES]
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+- **Name:** Austen Chen
+- **Location:** San Francisco, CA, USA (open to remote, hybrid, in-person; willing to relocate)
+- **Phone:** (925) 818-6210
+- **Email:** austenc33@gmail.com
+- **Website:** austenchen.com
+- **LinkedIn:** linkedin.com/in/austenchen
+- **Languages:** English (native)
+- **Status:** Available (April 2025)
+- **LinkedIn headline:** "BD + Partnerships leader and two-time founder with 10+ years building technical, product-driven deals"
 
 ### Education
-<!-- List your degrees, most recent first -->
-- **[DEGREE_LEVEL] in [FIELD]** ([YEAR_START]-[YEAR_END]) - [INSTITUTION]
-  - Thesis: "[THESIS_TITLE]"
-  - Topics: [KEY_TOPICS]
+- **BA in Psychology** (Minor: Sociology) (2008–2012) - University of California, Davis
+- **Certified ScrumMaster** (ScrumAlliance, ID#: 000437443) - 2015
 
 ### Professional Experience
-<!-- List your roles, most recent first -->
-- **[JOB_TITLE]** ([START_DATE] - [END_DATE]) - **[COMPANY]** ([LOCATION])
-  - [KEY_RESPONSIBILITY_1]
-  - [KEY_RESPONSIBILITY_2]
-  - [KEY_ACHIEVEMENT]
+
+- **Partner Solutions Architect + Engineer — Embedded Payroll** (Sept 2023 – July 2024) - **Gusto** (San Francisco, CA)
+  - Advised enterprise partners (Chase, US Bank) on API integration best-practices; acted as pre-sales technical SME
+  - Built business cases with executive leadership via tailored demos and scoped build approaches; drove $XXXk ARR within 6 months
+  - Created AI-based resources for demo + troubleshooting, cutting triaging times by 30%
+  - Championed partners internally via feature requests to ensure successful pilot + GTM launches
+
+- **Co-Founder & Head of Partnerships + Operations** (Nov 2019 – Apr 2025) - **Orihon** (San Francisco, CA)
+  - Represented 50+ artists; connected them with government, corporate, and non-profit entities
+  - Established first-of-kind collective connecting physical art with blockchain/NFTs (Ethereum, Solana)
+  - Drove 18% cost reduction through technology adoption and operational process improvements
+  - Selected for OnDeck Founder's Fellowship (ODF8)
+
+- **Senior Platform Marketing Manager** (Nov 2021 – May 2022) - **Autodesk** (San Francisco, CA)
+  - Defined platform GTM strategy in collaboration with C-Suite; emphasized cloud transformation and remote collaboration
+  - Led competitive analysis to identify new ICPs and assess TAM across AEC, DM, and ME verticals
+  - Created internal alignment across 15,000+ employees by integrating platform messaging into FY23 OKRs
+
+- **Director of Strategic Partnerships + Operations** (Jan 2019 – Apr 2020) - **2nd Address** (San Francisco, CA)
+  - Led transition from offline travel agency to online platform-oriented business model
+  - Restructured sales strategy and brand identity; drove 25% revenue increase QoQ
+  - Overhauled Salesforce instance; generated +100% growth in booking volume within 6 months
+
+- **Director of Business Development** (May 2016 – Dec 2018) - **Singular** (San Francisco, CA)
+  - Developed ETL processes with FAANG and 1000+ ad platforms for end-to-end attribution analytics; drove $2m MRR lift
+  - Built and managed a globally distributed partnerships team of 10+
+  - Reduced eCPAs by 20%+ for enterprise customers including Target, Walmart, and LinkedIn
+
+- **Senior Partnerships Manager** (Jan 2013 – May 2016) - **Chartboost** (San Francisco, CA)
+  - Reported to Co-Founders; conceived and productized initiatives (Creative Studio, Game Dev Advisory Board, CPM Buyouts) generating $3m ARR lift
+  - Led first-of-kind integrations with AdMob (Google), Twitter/MoPub, AppLovin, and AppsFlyer
+  - Pioneered Chartboost's first lead generation process; drove 24% increase in Top 100 iOS/Android app penetration
+
+- **Specialist + Genius Administrator** (Jul 2009 – Jan 2013) - **Apple** (San Francisco Bay Area, CA)
+  - Consulted 75+ customers daily; selected for exclusive Apple Maps geographic data accuracy team
+
+- **Co-Founder & Head of Operations + Marketing** (Jan 2009 – Sept 2011) - **Ergo Tedium**
+  - Co-founded online custom apparel platform; grew to 500+ customers and 1,200+ fulfilled orders
 
 ### Technical Skills
-- **Primary:** [YOUR_PRIMARY_SKILLS]
-- **Secondary:** [YOUR_SECONDARY_SKILLS]
-- **Domain:** [YOUR_DOMAIN_EXPERTISE]
-- **Software:** [YOUR_TOOLS_AND_SOFTWARE]
-
-### Certifications
-<!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
-
-### Publications
-<!-- List peer-reviewed publications, if any -->
-- [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL].
-
-### Awards
-<!-- List relevant awards, hackathons, competitions -->
-- [AWARD_NAME] - [EVENT] ([YEAR])
+- **Primary:** Business development, strategic partnerships, solutions architecture, GTM strategy, revenue operations
+- **Secondary:** API integration advising, pre-sales engineering, product-led growth, platform marketing
+- **Domain:** Embedded fintech/payroll, programmatic advertising/mobile, MarTech/attribution, Web3/NFTs, B2B SaaS
+- **Languages:** Python, JavaScript, SQL, HTML/CSS, C++
+- **Software:** Salesforce (Sales + Marketing Cloud), HubSpot (Sales + Marketing Hub), Tableau, Google Workspace
 
 ### Behavioral Profile
-<!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
+- **Builder/Founder mindset** - Thrives in ambiguous 0→1 situations; comfortable creating structure from scratch
+- **High urgency + effort** - Brings the attitude and work ethic needed to get things done quickly
+- **Fast learner** - Picks up new domains, products, and technical concepts rapidly
+- **Strengths:** Executive interfacing, cross-functional collaboration, first-of-kind deal-making, resolving ambiguity, lean operations
+- **Thrives in:** Early-stage or high-growth environments with clear ownership and room to build
 
 ### What Excites You
-<!-- What motivates you professionally -->
-- [PASSION_1]
-- [PASSION_2]
+- Building first-of-kind partnerships and integrations that expand product reach
+- Working at the intersection of technical depth and business impact (solutions architecture, BD)
+- 0→1 challenges — creating new programs, processes, and revenue streams from scratch
+- Companies with strong product-market fit and a clear mission
+
+### Target Roles
+- Director of Partnerships, Partnerships Manager, Head of BD, Business Development
+- Chief of Staff, Strategic Alliances Manager
+- Solutions Engineer, Partner Solutions Manager, Technical Account Manager
 
 ### Target Sectors
-<!-- Industries and companies you're targeting -->
-- [SECTOR_1]: [EXAMPLE_COMPANIES]
-- [SECTOR_2]: [EXAMPLE_COMPANIES]
+- Tech / SaaS: API-first companies, fintech, developer tools, B2B platforms
+- Tech-adjacent: any company with a strong product and partnership motion
 
 ### Deal-breakers
-<!-- Hard constraints on job search -->
-- [DEALBREAKER_1]
-- [DEALBREAKER_2]
+- None specified
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)
