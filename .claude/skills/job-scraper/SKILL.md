@@ -39,22 +39,31 @@ Run **WebSearch** queries from `search-queries.md`. By default, run the top 3 pr
 If the user specified a focus area (e.g. "data science"), prioritize queries from that category.
 
 For each search:
-- Use `WebSearch` with site-specific queries (linkedin.com/jobs, ashbyhq.com, lever.co, etc.)
+- Use `WebSearch` with site-specific queries (linkedin.com/jobs, ashbyhq.com, lever.co, greenhouse.io, etc.)
 - Target your configured geographic area
 - Look for postings from the last 14 days
 
-For ATS-specific searches (Lever, Ashby, SmartRecruiters, Workable), use the dedicated CLI skills
-(`lever-search`, `ashby-search`, `smartrecruiters-search`, `workable-search`) to query
-specific target companies directly — these return structured data and don't count against
-WebSearch quotas. Refer to the target companies list in `search-queries.md`.
+For target companies listed in `search-queries.md`, run company-specific WebSearch queries
+using `site:` filters (e.g. `site:jobs.lever.co/stripe partnerships`). This replaces the
+previous CLI-based ATS search approach, which is blocked by API-level IP restrictions.
+
+**Important:** The ATS CLI tools (`lever-search`, `ashby-search`, etc.) are currently
+non-functional due to "Host not allowed" 403 errors from Lever and Ashby APIs, which block
+requests from non-browser/datacenter IPs. Do NOT rely on them. Use WebSearch with `site:`
+queries as the primary search method for all ATS-hosted job boards.
 
 ### Step 2: Fetch & Parse
 
 For each promising result from Step 1:
-- Use `WebFetch` to retrieve the job posting page
-- Extract: **job title**, **company**, **location**, **posting date** (or "recent"), **URL**, **key requirements** (brief), **application deadline** (if listed)
+- Extract from the **WebSearch snippets** first: **job title**, **company**, **location**, **posting date** (or "recent"), **URL**, **key requirements** (brief), **application deadline** (if listed)
+- Only use `WebFetch` on non-ATS pages (aggregators like builtinsf.com, himalayas.app, indeed.com) to get additional details — ATS pages (jobs.lever.co, jobs.ashbyhq.com, boards.greenhouse.io) return 403 from WebFetch due to bot protection
+- If `WebFetch` fails with 403 on a URL, do NOT retry — use the WebSearch snippet data instead
 - Skip if the URL or company+title combo already exists in `seen_jobs.json`
 - Skip if the company+role already appears in `job_search_tracker.csv`
+
+**Freshness warning:** WebSearch returns Google-indexed results that may be days or weeks
+stale. Job postings close quickly. Always flag URLs as "unverified" — the user should
+click through to confirm the posting is still live before investing time.
 
 ### Step 3: Quick Fit Assessment
 
@@ -120,5 +129,6 @@ If the user decides to apply to any job, add a row to `job_search_tracker.csv`.
 2. **Respect deduplication.** Always check seen_jobs.json AND job_search_tracker.csv before presenting.
 3. **Focus on configured geographic area.** Skip jobs that require relocation or are clearly outside commute range.
 4. **Only open positions.** Skip postings with expired deadlines or those marked as closed.
-5. **Be efficient with WebFetch.** Don't fetch every search result - use titles and snippets to pre-filter before fetching.
+5. **Be efficient with WebFetch.** Don't fetch every search result - use titles and snippets to pre-filter before fetching. WebFetch will fail (403) on most ATS pages — only attempt it on aggregator/third-party pages.
 6. **Parallel searches.** Use the Agent tool or parallel WebSearch calls to speed up the search phase.
+7. **Flag URL freshness.** All URLs from WebSearch may be stale. Always note that users should verify the posting is still live before applying.

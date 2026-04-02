@@ -17,32 +17,48 @@ Secondary (company career pages via Google):
 
 ---
 
-## Target Companies by ATS
+## Target Companies
 
-Use the dedicated CLI skills to query these directly — faster and more structured than WebSearch.
+Search these companies directly using `site:` WebSearch queries. The previous CLI-based
+approach (lever-search, ashby-search, etc.) is blocked by API-level IP restrictions
+("Host not allowed" 403 errors) and should not be used.
 
-### Lever (lever-search)
+### Lever-hosted companies
+Use `site:jobs.lever.co/<slug>` queries:
 ```
-# Add/remove slugs based on your current target list:
-# stripe, cloudflare, rippling, plaid, brex, gusto, figma, notion, linear
-```
-
-### Ashby (ashby-search)
-```
-# Add/remove slugs based on your current target list:
-# anthropic, scale-ai, retool, mercury, vercel, runway, ramp, deel
-```
-
-### SmartRecruiters (smartrecruiters-search)
-```
-# Add/remove company IDs based on your current target list:
-# Thoughtworks, Salesforce, HubSpot
+site:jobs.lever.co/stripe partnerships OR "business development" OR "solutions"
+site:jobs.lever.co/cloudflare partnerships OR "business development"
+site:jobs.lever.co/rippling partnerships OR "business development"
+site:jobs.lever.co/plaid partnerships OR "business development"
+site:jobs.lever.co/brex partnerships OR "business development"
+site:jobs.lever.co/figma partnerships OR "business development"
+site:jobs.lever.co/notion partnerships OR "business development"
+site:jobs.lever.co/linear partnerships OR "business development"
 ```
 
-### Workable (workable-search)
+### Ashby-hosted companies
+Use `site:jobs.ashbyhq.com/<slug>` queries:
 ```
-# Add/remove slugs based on your current target list:
-# hubspot, intercom, gitlab, buffer
+site:jobs.ashbyhq.com/anthropic partnerships OR "business development"
+site:jobs.ashbyhq.com/scale-ai partnerships OR "business development"
+site:jobs.ashbyhq.com/retool partnerships OR "business development"
+site:jobs.ashbyhq.com/mercury partnerships OR "business development"
+site:jobs.ashbyhq.com/vercel partnerships OR "business development"
+site:jobs.ashbyhq.com/runway partnerships OR "business development"
+site:jobs.ashbyhq.com/ramp partnerships OR "business development"
+site:jobs.ashbyhq.com/deel partnerships OR "business development"
+```
+
+### Greenhouse-hosted companies
+Use `site:boards.greenhouse.io/<company>` or `site:job-boards.greenhouse.io/<company>` queries:
+```
+site:boards.greenhouse.io partnerships OR "business development" OR "strategic alliances"
+site:job-boards.greenhouse.io partnerships OR "business development"
+```
+
+### Other target companies (direct career pages)
+```
+"<company> careers" partnerships OR "business development" "San Francisco" OR Remote
 ```
 
 ---
@@ -129,11 +145,16 @@ If the user specifies a focus area, select queries from the matching category an
 - `/scrape fintech` → Cross-priority queries filtered to fintech/payments/embedded finance companies
 - `/scrape [company]` → Use the relevant ATS CLI directly (e.g. `lever-search search --company stripe --format table`)
 
-For target company searches, invoke the relevant ATS skill directly rather than using WebSearch:
-```bash
+For target company searches, use WebSearch with `site:` filters rather than CLI tools:
+```
 # Example: check Stripe's Lever board for partnerships roles
-bun run skills/lever-search/cli/src/cli.ts search --company stripe --team Partnerships --format table
+WebSearch: site:jobs.lever.co/stripe partnerships OR "strategic alliances" OR "business development"
 
 # Example: check Anthropic's Ashby board
-bun run skills/ashby-search/cli/src/cli.ts search --company anthropic --department Business --format table
+WebSearch: site:jobs.ashbyhq.com/anthropic partnerships OR "business development" OR "solutions"
 ```
+
+> **Note:** The CLI tools (`lever-search`, `ashby-search`, etc.) are blocked by "Host not
+> allowed" 403 errors from the ATS APIs. These APIs reject requests from non-browser/datacenter
+> IPs. WebSearch with `site:` queries is the recommended alternative. Be aware that results may
+> be stale — always verify URLs are still live before applying.

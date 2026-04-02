@@ -60,12 +60,21 @@ function sleep(ms: number): Promise<void> {
 async function fetchWithRetry<T>(url: string): Promise<T> {
   let delay = 500
   for (let attempt = 0; attempt <= 5; attempt++) {
-    const res = await fetch(url, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (compatible; lever-search-cli/1.0)",
-        "Accept": "application/json",
-      },
-    })
+    let res: Response
+    try {
+      res = await fetch(url, {
+        headers: {
+          "User-Agent": "Mozilla/5.0 (compatible; lever-search-cli/1.0)",
+          "Accept": "application/json",
+        },
+      })
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : String(err)
+      if (attempt === 5) writeError(`Network error: ${msg}`, "NETWORK_ERROR")
+      await sleep(delay + Math.random() * 500)
+      delay = Math.min(delay * 2, 5000)
+      continue
+    }
     if (res.status === 429 || res.status >= 500) {
       if (attempt === 5) writeError(`Request failed: ${res.status} ${res.statusText}`, "HTTP_ERROR")
       await sleep(delay + Math.random() * 500)
@@ -73,6 +82,18 @@ async function fetchWithRetry<T>(url: string): Promise<T> {
       continue
     }
     if (res.status === 404) writeError("Company not found on Lever. Check the slug.", "NOT_FOUND")
+    if (res.status === 403) {
+      const body = await res.text()
+      if (body.includes("Host not allowed")) {
+        writeError(
+          "Lever API blocked this request (403 Host not allowed). " +
+          "This happens when requests come from datacenter/server IPs. " +
+          "Use WebSearch with 'site:jobs.lever.co/<company>' queries instead.",
+          "HOST_BLOCKED"
+        )
+      }
+      writeError(`Request failed: ${res.status} ${res.statusText}`, "HTTP_ERROR")
+    }
     if (!res.ok) writeError(`Request failed: ${res.status} ${res.statusText}`, "HTTP_ERROR")
     return res.json() as Promise<T>
   }
